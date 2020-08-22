@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+    <context id="context" targetRuntime="MyBatis3">
+
+        <!-- 数据库的相关配置 "com.mysql.cj.jdbc.Driver" ?serverTimezone=UTC-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+
+                        connectionURL="jdbc:mysql://localhost:3306/csn?serverTimezone=UTC"
+                        userId="root"
+                        password="123">
+            <!--设置为 true 可以获取 tables 信息, 解决生成文件缺少 xxxByPrimaryKey 的问题 -->
+            <property name="useInformationSchema" value="true"/>
+        </jdbcConnection>
+        <!-- 实体类生成的位置 -->
+        <javaModelGenerator targetPackage="cn.edu.upc.csn.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置 放在resource文件夹下-->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.edu.upc.csn.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="csnuser" enableCountByExample="false" enableSelectByPrimaryKey="false"
+               enableDeleteByExample="false"
+        enableSelectByExample="false"  enableUpdateByExample="false"/>
+    </context>
+</generatorConfiguration>

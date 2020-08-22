@@ -9,3 +9,10 @@ Tomcat8
 
 Maven3.6
 
+##数据库配置
+mysql账户：root  密码:123
+
+库：csn
+
+表：csnuser
+
