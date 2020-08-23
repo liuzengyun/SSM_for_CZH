@@ -29,7 +29,7 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <table tableName="csnuser" enableCountByExample="false" enableSelectByPrimaryKey="false"
+        <table tableName="csnuser" enableCountByExample="false" enableSelectByPrimaryKey="true"
                enableDeleteByExample="false"
         enableSelectByExample="false"  enableUpdateByExample="false"/>
     </context>

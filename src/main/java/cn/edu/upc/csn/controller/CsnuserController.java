@@ -29,11 +29,18 @@ public class CsnuserController {
         map.put("result",csnuserService.insert(record));
         return  map;
     }
-    @RequestMapping("/get")
+
+    @RequestMapping("/denglu")
     @ResponseBody
-    public Map<String,Object> get(){
+    public Map<String,Object> denglu(@RequestBody Csnuser record){
         Map map=new HashMap<String,Object>();
-        map.put("status","success");
+        if(csnuserService.denglu(record).toString().equals("[]")){
+            map.put("status","failed");
+        }
+        else {
+            map.put("status","success");
+            map.put("data",csnuserService.denglu(record));
+        }
         return  map;
     }
 

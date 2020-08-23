@@ -6,11 +6,13 @@ import cn.edu.upc.csn.model.Csnuser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
+
 @Service
 public class CsnuserServiceImpl implements cn.edu.upc.csn.service.CsnuserService {
     @Autowired
-    //@Resource
+    @Resource
     private CsnuserMapper csnuserMapper;
 
 
@@ -21,5 +23,10 @@ public class CsnuserServiceImpl implements cn.edu.upc.csn.service.CsnuserService
         return 0;
     }
 
+    @Override
+    public List<Csnuser> denglu(Csnuser record)
+    {
+        return csnuserMapper.denglu(record);
+    }
 }
 

@@ -24,7 +24,7 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <!-- 扫描model包 -->
-        <property name="typeAliasesPackage" value="cn.edu.upc.lzy.model"/>
+        <property name="typeAliasesPackage" value="cn.edu.upc.csn.model"/>
         <!-- 扫描sql配置文件:mapper需要的xml文件-->
         <property name="mapperLocations" value="classpath:mapping/*.xml"/>
     </bean>
@@ -34,7 +34,7 @@
         <!-- 注入sqlSessionFactory -->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!-- 给出需要扫描Dao接口包 -->
-        <property name="basePackage" value="cn.edu.upc.lzy.dao"/>
+        <property name="basePackage" value="cn.edu.upc.csn.dao"/>
     </bean>
 
     <!-- 事务管理 -->
